@@ -24,20 +24,15 @@
   <string name="pref_camera_picturesize_entry_10_4mp">10.4 ميغا بكسل</string>
   <string name="pref_camera_picturesize_entry_10mp">10 ميغا بكسل</string>
   <string name="pref_camera_picturesize_entry_9mp">9 ميغا بكسل</string>
-  <string name="pref_camera_picturesize_entry_8_2mp">8.2 ميغا بكسل</string>
   <string name="pref_camera_picturesize_entry_7_7mp">7.7 ميغا بكسل</string>
   <string name="pref_camera_picturesize_entry_6_4mp">6.4 ميغا بكسل</string>
-  <string name="pref_camera_picturesize_entry_6mp">6 ميغا بكسل</string>
   <string name="pref_camera_picturesize_entry_4_5mp">4.5 ميغا بكسل</string>
   <string name="pref_camera_picturesize_entry_4mp">4 ميغا بكسل</string>
-  <string name="pref_camera_picturesize_entry_3_7mp">3.7 ميغا بكسل</string>
   <string name="pref_camera_picturesize_entry_2_5mp">2.5 ميغا بكسل</string>
-  <string name="pref_camera_picturesize_entry_2_1mp">2.1 ميغا بكسل</string>
   <string name="pref_camera_picturesize_entry_1_9mp">1.9 ميغا بكسل</string>
   <string name="pref_camera_picturesize_entry_wxga">WXGA</string>
   <string name="pref_camera_picturesize_entry_xga">XGA</string>
   <string name="pref_camera_picturesize_entry_svga">SVGA</string>
-  <string name="pref_camera_picturesize_entry_nhd">nHD</string>
   <string name="pref_camera_picturesize_entry_wvga">WVGA</string>
   <string name="pref_camera_picturesize_entry_wqvga">WQVGA</string>
   <string name="pref_camera_scenemode_entry_antimotionblur">الحد من الضبابية</string>
@@ -82,7 +77,6 @@
   <string name="pref_camera_scenemode_entry_text">نص</string>
   <string name="pref_camera_scenemode_entry_theatre">مسرح</string>
   <string name="pref_camera_scenemode_entry_whiteboard">لوح المعلومات</string>
-  <string name="pref_camera_focusmode_entry_continuouspicture">صورة مستمرة</string>
   <string name="pref_camera_focusmode_entry_extended">مدد</string>
   <string name="pref_camera_focusmode_entry_facedetect">كشف الوجه</string>
   <string name="pref_camera_focusmode_entry_facepriority">أولوية الوجه</string>
@@ -103,7 +97,6 @@
   <string name="pref_camera_burst_entry_15">15 لقطة</string>
   <string name="pref_camera_burst_entry_20">20 لقطة</string>
   <string name="pref_camera_focustime_title">اللمس لي التركيز</string>
-  <string name="pref_camera_focustime_summary">حدد مدة اللمس للتركيز</string>
   <string name="pref_camera_focustime_entry_5">5ث</string>
   <string name="pref_camera_focustime_entry_10">10ث</string>
   <string name="pref_camera_focustime_entry_15">15ث</string>
@@ -123,10 +116,7 @@
   <string name="pref_camera_slow_shutter_entry_8s">8 ثوان</string>
   <string name="pref_camera_storage_title">التخزين</string>
   <string name="camera_menu_enhance_label">تعزيز</string>
-  <string name="camera_menu_slow_shutter_label">مصراع بطيئة</string>
   <string name="camera_menu_beauty_mode_label">تجميل</string>
-  <string name="camera_menu_colorize_label">تلوين</string>
-  <string name="camera_menu_effects_label">آثار</string>
   <string name="camera_menu_asd_label">المشهد الذكية</string>
   <string name="pref_camera_power_shutter_title">مصراع قوي</string>
   <string name="pref_superzoom_title">تكبير</string>

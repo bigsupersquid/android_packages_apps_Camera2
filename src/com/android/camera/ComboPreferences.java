@@ -145,8 +145,7 @@ public class ComboPreferences implements
     }
 
     private static boolean isGlobal(String key) {
-        return key.equals(CameraSettings.KEY_VIDEO_TIME_LAPSE_FRAME_INTERVAL)
-                || key.equals(CameraSettings.KEY_CAMERA_ID)
+        return key.equals(CameraSettings.KEY_CAMERA_ID)
                 || key.equals(CameraSettings.KEY_RECORD_LOCATION)
                 || key.equals(CameraSettings.KEY_CAMERA_FIRST_USE_HINT_SHOWN)
                 || key.equals(CameraSettings.KEY_VIDEO_FIRST_USE_HINT_SHOWN)
@@ -155,6 +154,7 @@ public class ComboPreferences implements
                 || key.equals(CameraSettings.KEY_TIMER_SOUND_EFFECTS)
                 || key.equals(CameraSettings.KEY_PHOTOSPHERE_PICTURESIZE)
                 || key.equals(CameraSettings.KEY_POWER_SHUTTER)
+                || key.equals(CameraSettings.KEY_MAX_BRIGHTNESS)
                 || key.equals(CameraSettings.KEY_STORAGE);
     }
 

@@ -24,20 +24,15 @@
   <string name="pref_camera_picturesize_entry_10_4mp">10.4 مێگاپێکسڵ</string>
   <string name="pref_camera_picturesize_entry_10mp">10 مێگاپێکسڵ</string>
   <string name="pref_camera_picturesize_entry_9mp">9 مێگاپێکسڵ</string>
-  <string name="pref_camera_picturesize_entry_8_2mp">8.2 مێگاپێکسڵ</string>
   <string name="pref_camera_picturesize_entry_7_7mp">7,7 مێگاپێکسڵ</string>
   <string name="pref_camera_picturesize_entry_6_4mp">6.4 مێگاپێکسڵ</string>
-  <string name="pref_camera_picturesize_entry_6mp">6 مێگاپێکسڵ</string>
   <string name="pref_camera_picturesize_entry_4_5mp">4.5 مێگاپێکسڵ</string>
   <string name="pref_camera_picturesize_entry_4mp">4 مێگاپێکسڵ</string>
-  <string name="pref_camera_picturesize_entry_3_7mp">3.7 مێگاپێکسڵ</string>
   <string name="pref_camera_picturesize_entry_2_5mp">2.5 مێگاپێکسڵ</string>
-  <string name="pref_camera_picturesize_entry_2_1mp">2.1 مێگاپێکسڵ</string>
   <string name="pref_camera_picturesize_entry_1_9mp">1.9 مێگاپێکسڵ</string>
   <string name="pref_camera_picturesize_entry_wxga">WXGA</string>
   <string name="pref_camera_picturesize_entry_xga">XGA</string>
   <string name="pref_camera_picturesize_entry_svga">SVGA</string>
-  <string name="pref_camera_picturesize_entry_nhd">nHD</string>
   <string name="pref_camera_picturesize_entry_wvga">WVGA</string>
   <string name="pref_camera_picturesize_entry_wqvga">WQVGA</string>
   <string name="pref_camera_scenemode_entry_antimotionblur">که‌مکردنه‌وه‌ی ته‌ڵخبوونی جوڵه‌</string>
@@ -82,7 +77,6 @@
   <string name="pref_camera_scenemode_entry_text">ده‌ق</string>
   <string name="pref_camera_scenemode_entry_theatre">شانۆ</string>
   <string name="pref_camera_scenemode_entry_whiteboard">ته‌خته‌ی وایتبۆرد</string>
-  <string name="pref_camera_focusmode_entry_continuouspicture">به‌رده‌وامبوونی وێنه‌کان</string>
   <string name="pref_camera_focusmode_entry_extended">فراوانکردن</string>
   <string name="pref_camera_focusmode_entry_facedetect">پشکنینی ڕوو</string>
   <string name="pref_camera_focusmode_entry_facepriority">له‌پێش ڕوو</string>
@@ -103,7 +97,6 @@
   <string name="pref_camera_burst_entry_15">15 گرتن</string>
   <string name="pref_camera_burst_entry_20">20 گرتن</string>
   <string name="pref_camera_focustime_title">ماوه‌ی ده‌ستلێدان بۆ سه‌رنجدان(فۆکوس)</string>
-  <string name="pref_camera_focustime_summary">ده‌ستنیشانکردنی ماوه‌ی ده‌ستلێدان بۆ سه‌رنجدان(فۆکوس)</string>
   <string name="pref_camera_focustime_entry_5">5چرکه‌</string>
   <string name="pref_camera_focustime_entry_10">10چرکه‌</string>
   <string name="pref_camera_focustime_entry_15">15چرکه‌</string>
@@ -123,10 +116,7 @@
   <string name="pref_camera_slow_shutter_entry_8s">8 چرکه‌</string>
   <string name="pref_camera_storage_title">بیرگەی</string>
   <string name="camera_menu_enhance_label">زیادکردن</string>
-  <string name="camera_menu_slow_shutter_label">وێنه‌گرتنێکی خاوتر</string>
   <string name="camera_menu_beauty_mode_label">جوانکاری</string>
-  <string name="camera_menu_colorize_label">ڕه‌نگاوڕه‌نگ</string>
-  <string name="camera_menu_effects_label">کاریگه‌رییه‌کان</string>
   <string name="camera_menu_asd_label">دیمه‌نی به‌هێز</string>
   <string name="pref_camera_power_shutter_title">هێزی وێنه‌ گیره‌ر</string>
   <string name="pref_superzoom_title">زه‌ڕه‌بین</string>

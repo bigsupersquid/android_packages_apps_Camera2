@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2009 The Android Open Source Project
- * Copyright (C) 2013 The CyanogenMod Project
+ * Copyright (C) 2013-2014 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,9 +83,9 @@ public class CameraSettings {
     public static final String KEY_SUPERZOOM = "pref_camera_superzoom";
 
     public static final String KEY_POWER_SHUTTER = "pref_power_shutter";
+    public static final String KEY_MAX_BRIGHTNESS = "pref_max_brightness";
     public static final String KEY_VIDEO_ENCODER = "pref_camera_videoencoder_key";
     public static final String KEY_AUDIO_ENCODER = "pref_camera_audioencoder_key";
-    public static final String KEY_VIDEO_DURATION = "pref_camera_video_duration_key";
     public static final String KEY_POWER_MODE = "pref_camera_powermode_key";
     public static final String KEY_PICTURE_FORMAT = "pref_camera_pictureformat_key";
     public static final String KEY_COLOR_EFFECT = "pref_camera_coloreffect_key";
@@ -133,9 +133,6 @@ public class CameraSettings {
     public static final String FLIP_MODE_VH = "flip-vh";
 
     private static final String KEY_QC_PICTURE_FORMAT = "picture-format-values";
-    private static final String VIDEO_QUALITY_HIGH = "high";
-    private static final String VIDEO_QUALITY_MMS = "mms";
-    private static final String VIDEO_QUALITY_YOUTUBE = "youtube";
 
     public static final String KEY_BURST_MODE = "pref_camera_burst_key";
     public static final String KEY_BEAUTY_MODE = "pref_camera_beauty_mode";
@@ -148,11 +145,6 @@ public class CameraSettings {
 
     public static final int CURRENT_VERSION = 7;
     public static final int CURRENT_LOCAL_VERSION = 3;
-
-    public static final int DEFAULT_VIDEO_DURATION = 0; // no limit
-    private static final int MMS_VIDEO_DURATION = (CamcorderProfile.get(CamcorderProfile.QUALITY_LOW) != null) ?
-          CamcorderProfile.get(CamcorderProfile.QUALITY_LOW).duration :30;
-    private static final int YOUTUBE_VIDEO_DURATION = 15 * 60; // 15 mins
 
     private static final String TAG = "CameraSettings";
 
@@ -283,7 +275,7 @@ public class CameraSettings {
     private List<String> getSupportedPictureFormatLists() {
         String str = mParameters.get(KEY_QC_PICTURE_FORMAT);
         if (str == null) {
-            str = "jpeg,raw"; // if not set, fall back to default behavior
+            return null;
         }
         return split(str);
     }
@@ -441,6 +433,7 @@ public class CameraSettings {
         ListPreference asd = group.findPreference(KEY_ASD);
         ListPreference storage = group.findPreference(KEY_STORAGE);
         ListPreference superZoom = group.findPreference(KEY_SUPERZOOM);
+        ListPreference videoHdr = group.findPreference(KEY_VIDEO_HDR);
 
         // Since the screen could be loaded from different resources, we need
         // to check if the preference is available here
@@ -496,6 +489,9 @@ public class CameraSettings {
         if (cameraHdrPlus != null && (!ApiHelper.HAS_CAMERA_HDR_PLUS ||
                 !GcamHelper.hasGcamCapture() || isFrontCamera)) {
             removePreference(group, cameraHdrPlus.getKey());
+        }
+        if (videoHdr != null) {
+            filterUnsupportedOptions(group, videoHdr, mParameters.getSupportedVideoHDRModes());
         }
         if (powerShutter != null && CameraUtil.hasCameraKey()) {
             removePreference(group, powerShutter.getKey());
@@ -730,7 +726,6 @@ public class CameraSettings {
             // Just use video quality to replace it and
             // ignore the current settings.
             editor.remove("pref_camera_videoquality_key");
-            editor.remove("pref_camera_video_duration_key");
             version = 4;
         }
         if (version == 4) {
@@ -887,42 +882,21 @@ public class CameraSettings {
               supported.add(Integer.toString(CamcorderProfile.QUALITY_4kUHD));
            }
         }
-
-        // the google 1080p definition allows variation in height
         if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_1080P)) {
            if (checkSupportedVideoQuality(parameters,1920,1080)){
               supported.add(Integer.toString(CamcorderProfile.QUALITY_1080P));
            }
         }
-        else if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_1080P)) {
-           if (checkSupportedVideoQuality(parameters,1920,1088)){
-              supported.add(Integer.toString(CamcorderProfile.QUALITY_1080P));
-           }
-        }
-
         if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_720P)) {
            if (checkSupportedVideoQuality(parameters,1280,720)){
               supported.add(Integer.toString(CamcorderProfile.QUALITY_720P));
            }
         }
-
-        // the google 480p definition allows variation in width
         if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_480P)) {
            if (checkSupportedVideoQuality(parameters,720,480)){
               supported.add(Integer.toString(CamcorderProfile.QUALITY_480P));
            }
         }
-        else if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_480P)) {
-           if (checkSupportedVideoQuality(parameters,704,480)){
-              supported.add(Integer.toString(CamcorderProfile.QUALITY_480P));
-           }
-        }
-        else if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_480P)) {
-           if (checkSupportedVideoQuality(parameters,640,480)){
-              supported.add(Integer.toString(CamcorderProfile.QUALITY_480P));
-           }
-        }
-
         if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_FWVGA)) {
            if (checkSupportedVideoQuality(parameters,864,480)){
               supported.add(Integer.toString(CamcorderProfile.QUALITY_FWVGA));
@@ -953,23 +927,6 @@ public class CameraSettings {
               supported.add(Integer.toString(CamcorderProfile.QUALITY_QCIF));
            }
         }
-
-        // high and low are always permitted
-        if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_HIGH)) {
-           supported.add(Integer.toString(CamcorderProfile.QUALITY_HIGH));
-        }
-        if (CamcorderProfile.hasProfile(cameraId, CamcorderProfile.QUALITY_LOW)) {
-           supported.add(Integer.toString(CamcorderProfile.QUALITY_LOW));
-        }
-
-    }
-    public static int getVideoDurationInMillis(String quality) {
-        if (VIDEO_QUALITY_MMS.equals(quality)) {
-            return MMS_VIDEO_DURATION * 1000;
-        } else if (VIDEO_QUALITY_YOUTUBE.equals(quality)) {
-            return YOUTUBE_VIDEO_DURATION * 1000;
-        }
-        return DEFAULT_VIDEO_DURATION * 1000;
     }
 
     /**
@@ -990,21 +947,6 @@ public class CameraSettings {
         return isBeautyModeSupported(params) && (Integer.valueOf(params.get("face-beautify")) > 0);
     }
 
-    /**
-     * Enable video mode for certain cameras.
-     *
-     * @param params
-     * @param on
-     */
-    public static void setVideoMode(Parameters params, boolean on) {
-        if (CameraUtil.useSamsungCamMode()) {
-            params.set("cam_mode", on ? "1" : "0");
-        }
-        if (CameraUtil.useHTCCamMode()) {
-            params.set("cam-mode", on ? "1" : "0");
-        }
-    }
-
     public static List<String> getSupportedSlowShutter(Parameters params) {
         String p = params.get("exposure-time-values");
         if (p != null) {
@@ -1022,11 +964,6 @@ public class CameraSettings {
     public static boolean isSlowShutterEnabled(Parameters params) {
         return (getSupportedSlowShutter(params) != null) &&
                 !"0".equals(params.get("exposure-time"));
-    }
-
-    public static boolean useZSLBurst(Parameters params) {
-        return CameraUtil.isZSLEnabled() &&
-                params.get("num-snaps-per-shutter") != null;
     }
 
     public static void setSuperZoom(Parameters params, boolean on) {

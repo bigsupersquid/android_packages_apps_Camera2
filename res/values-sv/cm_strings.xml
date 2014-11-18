@@ -24,20 +24,15 @@
   <string name="pref_camera_picturesize_entry_10_4mp">10,4 megapixlar</string>
   <string name="pref_camera_picturesize_entry_10mp">10 megapixlar</string>
   <string name="pref_camera_picturesize_entry_9mp">9 megapixlar</string>
-  <string name="pref_camera_picturesize_entry_8_2mp">8,2 megapixlar</string>
   <string name="pref_camera_picturesize_entry_7_7mp">7,7 megapixlar</string>
   <string name="pref_camera_picturesize_entry_6_4mp">6,4 megapixlar</string>
-  <string name="pref_camera_picturesize_entry_6mp">6 megapixlar</string>
   <string name="pref_camera_picturesize_entry_4_5mp">4,5 megapixlar</string>
   <string name="pref_camera_picturesize_entry_4mp">4 megapixlar</string>
-  <string name="pref_camera_picturesize_entry_3_7mp">3,7 megapixlar</string>
   <string name="pref_camera_picturesize_entry_2_5mp">2,5 megapixlar</string>
-  <string name="pref_camera_picturesize_entry_2_1mp">2,1 megapixlar</string>
   <string name="pref_camera_picturesize_entry_1_9mp">1,9 megapixlar</string>
   <string name="pref_camera_picturesize_entry_wxga">WXGA</string>
   <string name="pref_camera_picturesize_entry_xga">XGA</string>
   <string name="pref_camera_picturesize_entry_svga">SVGA</string>
-  <string name="pref_camera_picturesize_entry_nhd">nHD</string>
   <string name="pref_camera_picturesize_entry_wvga">WVGA</string>
   <string name="pref_camera_picturesize_entry_wqvga">WQVGA</string>
   <string name="pref_camera_scenemode_entry_antimotionblur">Reducera rörelseoskärpa</string>
@@ -82,7 +77,6 @@
   <string name="pref_camera_scenemode_entry_text">Text</string>
   <string name="pref_camera_scenemode_entry_theatre">Teater</string>
   <string name="pref_camera_scenemode_entry_whiteboard">Whiteboard</string>
-  <string name="pref_camera_focusmode_entry_continuouspicture">Kontinuerlig bild</string>
   <string name="pref_camera_focusmode_entry_extended">Utökad</string>
   <string name="pref_camera_focusmode_entry_facedetect">Ansiktsigenkänning</string>
   <string name="pref_camera_focusmode_entry_facepriority">Ansiktsprioritet</string>
@@ -103,7 +97,6 @@
   <string name="pref_camera_burst_entry_15">15 bilder</string>
   <string name="pref_camera_burst_entry_20">20 bilder</string>
   <string name="pref_camera_focustime_title">Fokuslängd vid tryck</string>
-  <string name="pref_camera_focustime_summary">Välj längd för fokus vid tryck</string>
   <string name="pref_camera_focustime_entry_5">5 s</string>
   <string name="pref_camera_focustime_entry_10">10 s</string>
   <string name="pref_camera_focustime_entry_15">15 s</string>
@@ -123,10 +116,7 @@
   <string name="pref_camera_slow_shutter_entry_8s">8 sekunder</string>
   <string name="pref_camera_storage_title">Lagring</string>
   <string name="camera_menu_enhance_label">FÖRBÄTTRA</string>
-  <string name="camera_menu_slow_shutter_label">LÅNGSAM SLUTARTID</string>
   <string name="camera_menu_beauty_mode_label">FÖRSKÖNA</string>
-  <string name="camera_menu_colorize_label">FÄRGLÄGG</string>
-  <string name="camera_menu_effects_label">EFFEKTER</string>
   <string name="camera_menu_asd_label">SMART SCEN</string>
   <string name="pref_camera_power_shutter_title">Påknapp som avtryckare</string>
   <string name="pref_superzoom_title">Förstora</string>
